@@ -1,0 +1,20 @@
+{
+  "name": "refactoring-color",
+  "version": "1.0.0",
+  "description": "Color pallete generator for your next project",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@tahins",
+  "license": "ISC",
+  "dependencies": {
+    "hyperapp": "^2.0.4",
+    "spectre.css": "^0.5.8"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
