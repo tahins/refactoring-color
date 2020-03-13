@@ -12,7 +12,8 @@
 }
 
 .color-input:focus,
-.preview-button:focus {
+.preview-button:focus,
+.button-primary-color:focus {
     outline: none;
 }
 

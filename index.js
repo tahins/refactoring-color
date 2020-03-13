@@ -4,6 +4,7 @@ import AccentColor from './src/components/AccentColor';
 import ColorSystem from './src/components/ColorSystem';
 
 import './index.css';
+import './toast.css';
 
 const init = {
     screens: [
@@ -17,7 +18,8 @@ const init = {
     grey: { h: 207, s: 10, l: 40 },
     red: { h: 0, s: 70, l: 40 },
     green: { h: 145, s: 55, l: 40 },
-    yellow: { h: 50, s: 90, l: 40 }
+    yellow: { h: 50, s: 90, l: 40 },
+    toast: { show: false, message: '' }
 };
 
 const gotoNextStep = state => ({ ...state, currentScreen: Math.min(++state.currentScreen, state.screens.length - 1) });
@@ -30,7 +32,13 @@ app({
         $('div', { class: 'navigation' }, [
             state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, '<'),
             state.currentScreen < state.screens.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, '>')
-        ])
+        ]),
+        $('div', {
+            class: {
+                toast: true,
+                show: state.toast.show
+            }
+        }, state.toast.message)
     ]),
     node: document.getElementById("app")
 });

@@ -22,16 +22,17 @@ const getShades = getShade => colorLightness.map(lightness => {
 const getColorShade = color => lightness => `hsl(${color.h}, ${color.s}%, ${lightness}%)`;
 const getGreyShade = (primaryColor, grey) => lightness => `hsl(${primaryColor.h}, ${grey.s}%, ${lightness}%)`;
 
-const onShadeClick = (state, colorCode) => [state, copyColorCode(state, colorCode)];
+const onShadeClick = (state, colorCode) => showToast(state, colorCode);
 
-const copyColorCode = (state, colorCode) => [state, (() => {
-    navigator.clipboard.writeText(colorCode);
-    showToast(`${colorCode} copied!`);
-    timeout(hideToast, { delay: 3000 });
-})()];
+const showToast = (state, colorCode) => [{
+    ...state,
+    toast: { show: true, message: `${colorCode} copied!` }
+}, timeout(hideToast, { delay: 3000 })];
 
-const showToast = message => console.log(message);
-const hideToast = () => console.log('hide toast');
+const hideToast = state => ({
+    ...state,
+    toast: { show: false, message: '' }
+});
 
 const ColorSystem = ({ primaryColor, accentColor, grey, red, green, yellow }) => $('div', { class: 'container' }, [
     $('h1', {}, 'Your color pallete'),
