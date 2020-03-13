@@ -18,7 +18,7 @@ h2 {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    margin-right: 20px;
     border-radius: 3px;
+    margin: 0 20px 20px 0;
     display: inline-block;
 }

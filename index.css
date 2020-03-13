@@ -12,8 +12,11 @@ html, body {
 .container {
     flex: 1;
     display: flex;
-    padding: 40px;
     flex-direction: column;
+}
+
+.section {
+    padding: 20px;
 }
 
 .navigation {

@@ -35,11 +35,13 @@ const hideToast = state => ({
 });
 
 const ColorSystem = ({ primaryColor, accentColor, grey, red, green, yellow }) => $('div', { class: 'container' }, [
-    $('h1', {}, 'Your color pallete'),
-    $('p', {}, 'Click on any color to copy the color code'),
+    $('div', { class: 'section' }, [
+        $('h1', {}, 'Your color pallete'),
+        $('p', {}, 'Click on any color to copy the color code'),
+    ]),
     $(ColumnLayout, {
         children: [
-            $('div', {}, [
+            $('div', { class: 'section' }, [
                 $('h2', {}, 'Primary color shades'),
                 $('div', { class: 'shades-container' }, getColorShades(primaryColor)),
                 $('h2', {}, 'Accent color shades'),
@@ -47,7 +49,7 @@ const ColorSystem = ({ primaryColor, accentColor, grey, red, green, yellow }) =>
                 $('h2', {}, 'Grey shades'),
                 $('div', { class: 'shades-container' }, getGreyShades(primaryColor, grey))
             ]),
-            $('div', {}, [
+            $('div', { class: 'section' }, [
                 $('h2', {}, 'Green shades'),
                 $('div', { class: 'shades-container' }, getColorShades(green)),
                 $('h2', {}, 'Red shades'),
