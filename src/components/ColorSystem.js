@@ -2,6 +2,8 @@ import { h as $ } from 'hyperapp';
 import { timeout } from "@hyperapp/time";
 import ColumnLayout from '../layouts/ColumnLayout';
 
+import './ColorSystem.css';
+
 const colorLightness = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 
 const getColorShades = color => getShades(getColorShade(color));
@@ -20,7 +22,7 @@ const getShades = getShade => colorLightness.map(lightness => {
 const getColorShade = color => lightness => `hsl(${color.h}, ${color.s}%, ${lightness}%)`;
 const getGreyShade = (primaryColor, grey) => lightness => `hsl(${primaryColor.h}, ${grey.s}%, ${lightness}%)`;
 
-const onShadeClick = (state, colorCode) => [state, copyColorCode()];
+const onShadeClick = (state, colorCode) => [state, copyColorCode(state, colorCode)];
 
 const copyColorCode = (state, colorCode) => [state, (() => {
     navigator.clipboard.writeText(colorCode);
@@ -31,7 +33,7 @@ const copyColorCode = (state, colorCode) => [state, (() => {
 const showToast = message => console.log(message);
 const hideToast = () => console.log('hide toast');
 
-const ColorSystem = ({ primaryColor, accentColor, grey, red, green, yellow }) => $('center', {}, [
+const ColorSystem = ({ primaryColor, accentColor, grey, red, green, yellow }) => $('div', { class: 'container' }, [
     $('h1', {}, 'Your color pallete'),
     $('p', {}, 'Click on any color to copy the color code'),
     $(ColumnLayout, {

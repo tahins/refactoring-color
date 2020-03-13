@@ -2,12 +2,17 @@ import { h as $ } from 'hyperapp';
 import ColumnLayout from '../layouts/ColumnLayout';
 import ColorPicker from '../components/ColorPicker';
 
+import './Component.css';
+import './ColorPicker.css';
+
 const changeColor = (state, event) => ({
     ...state,
     primaryColor: { h: event.target.value, s: 100, l: 40 }
 });
 
 const PrimaryColor = ({ primaryColor }) => $(ColumnLayout, {
+    center: true,
+    reverse: true,
     children: [
         $('div', { class: 'color-picker' }, [
             $('h1', { class: 'title' }, 'Pick your primary color'),

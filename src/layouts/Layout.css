@@ -1,0 +1,23 @@
+.column-layout {
+  flex: 1;
+  display: flex;
+  flex-flow: wrap;
+  align-self: stretch;
+}
+
+@media only screen and (max-width: 700px) {
+  .column-layout.reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    min-width: 350px;
+    align-items: stretch;
+}
+
+.column.center {
+  justify-content: center;
+}

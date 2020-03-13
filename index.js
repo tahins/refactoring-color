@@ -28,8 +28,8 @@ app({
     view: state => $('div', {}, [
         $(state.screens[state.currentScreen], state),
         $('div', { class: 'navigation' }, [
-            state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, '< Previous'),
-            state.currentScreen < state.screens.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, 'Next >')
+            state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, '<'),
+            state.currentScreen < state.screens.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, '>')
         ])
     ]),
     node: document.getElementById("app")

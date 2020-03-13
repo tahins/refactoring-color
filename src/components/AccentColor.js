@@ -2,6 +2,9 @@ import { h as $ } from 'hyperapp';
 import ColumnLayout from '../layouts/ColumnLayout';
 import ColorPicker from '../components/ColorPicker';
 
+import './Component.css';
+import './ColorPicker.css';
+
 const changeColor = (state, event) => ({
     ...state,
     accentHue: event.target.value,
@@ -9,6 +12,8 @@ const changeColor = (state, event) => ({
 });
 
 const AccentColor = ({ accentColor, primaryColor }) => $(ColumnLayout, {
+    center: true,
+    reverse: true,
     children: [
         $('div', { class: 'color-picker' }, [
             $('h1', { class: 'title' }, 'Pick your accent color'),

@@ -1,0 +1,96 @@
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.color-input {
+    border: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 7px;
+}
+
+.color-input:focus,
+.preview-button:focus {
+    outline: none;
+}
+
+.color-preview {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.button-primary-color {
+    border: 0;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 15px;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.button-card {
+    margin-top: 20px;
+}
+
+.card-accent-border {
+    display: flex;
+    padding: 20px;
+    max-width: 350px;
+    line-height: 1.5;
+    border-style: solid;
+    border-width: 5px 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    border-color: lightgray;
+    box-shadow: 0 5px 15px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+.card {
+    border: 0;
+    width: 200px;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 7px;
+    background-color: white;
+    border-color: lightgray;
+    box-shadow: 0 5px 15px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+.circle-icon {
+    width: 15px;
+    height: 15px;
+    margin: -3px 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: lightgray;
+}
+
+.menu-item {
+    margin: 5px 0;
+}
+
+.menu-label {
+    font-size: 14px;
+    color: #5d6670;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.badge-accent-color {
+    font-size: 10px;
+    padding: 3px 7px;
+    font-weight: bold;
+    border-radius: 7px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
