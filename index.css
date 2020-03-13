@@ -15,10 +15,17 @@ html, body {
 }
 
 .column-layout {
-    display: flex;
-    width: 100vw;
     height: 100vh;
-    flex-direction: row;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    min-width: 350px;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .default-layout {
@@ -27,7 +34,6 @@ html, body {
 
 .color-picker {
     display: flex;
-    width: 50%;
     padding: 20px;
     align-items: center;
     flex-direction: column;
@@ -57,7 +63,8 @@ html, body {
 
 .color-preview {
     display: flex;
-    width: 50%;
+    flex: 1;
+    /* width: 50%; */
     padding: 20px;
     align-items: center;
     flex-direction: column;
@@ -156,6 +163,7 @@ h2 {
 .color-container {
     width: 30px;
     height: 30px;
+    cursor: pointer;
     margin-right: 20px;
     border-radius: 3px;
     display: inline-block;

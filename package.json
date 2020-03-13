@@ -11,6 +11,7 @@
   "author": "@tahins",
   "license": "MIT",
   "dependencies": {
+    "@hyperapp/time": "0.0.10",
     "hyperapp": "^2.0.4"
   },
   "devDependencies": {

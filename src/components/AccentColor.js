@@ -30,7 +30,7 @@ const AccentColor = ({ accentColor, primaryColor }) => $(ColumnLayout, {
                     class: 'button-primary-color button-card', style: {
                         backgroundColor: `hsl(${primaryColor.h}, ${primaryColor.s}%, ${primaryColor.l}%)`
                     }
-                }, 'Primary Color')
+                }, 'Primary Button')
             ]),
             $('div', { class: 'card' }, [
                 $('div', { class: 'menu-item' }, [
