@@ -36,7 +36,7 @@ const hideToast = state => ({
 
 const ColorSystem = ({ primaryColor, accentColor, grey, red, green, yellow }) => $('div', { class: 'container' }, [
     $('div', { class: 'section' }, [
-        $('h1', {}, 'Your color pallete'),
+        $('h1', {}, 'Your color palette'),
         $('p', {}, 'Click on any color to copy the color code'),
     ]),
     $(ColumnLayout, {
