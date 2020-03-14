@@ -1,17 +1,10 @@
 import { h as $, app } from "hyperapp";
-import PrimaryColor from './src/components/PrimaryColor';
-import AccentColor from './src/components/AccentColor';
-import ColorSystem from './src/components/ColorSystem';
+import { SCREENS } from "./src/constants/AppConstant";
 
 import './index.css';
 import './toast.css';
 
 const init = {
-    screens: [
-        PrimaryColor,
-        AccentColor,
-        ColorSystem,
-    ],
     currentScreen: 0,
     primaryColor: { h: 207, s: 90, l: 40 },
     accentColor: { h: 155, s: 90, l: 40 },
@@ -22,16 +15,16 @@ const init = {
     toast: { show: false, message: '' }
 };
 
-const gotoNextStep = state => ({ ...state, currentScreen: Math.min(++state.currentScreen, state.screens.length - 1) });
+const gotoNextStep = state => ({ ...state, currentScreen: Math.min(++state.currentScreen, SCREENS.length - 1) });
 const gotoPreviousStep = state => ({ ...state, currentScreen: Math.max(--state.currentScreen, 0) });
 
 app({
     init,
     view: state => $('div', {}, [
-        $(state.screens[state.currentScreen], state),
+        $(SCREENS[state.currentScreen], state),
         $('div', { class: 'navigation' }, [
             state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, '<'),
-            state.currentScreen < state.screens.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, '>')
+            state.currentScreen < SCREENS.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, '>')
         ]),
         $('div', {
             class: {
