@@ -6,7 +6,7 @@ const ColorPicker = ({ initialHue, onChangeColor }) => $('div', { class: 'hsl-co
         class: 'hsl-hue-input',
         type: 'range',
         value: initialHue, min: 0, max: 360,
-        onchange: onChangeColor
+        oninput: onChangeColor
     })
 ]);
 
