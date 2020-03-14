@@ -1,7 +1,7 @@
 {
   "name": "refactoring-color",
   "version": "1.0.0",
-  "description": "Color pallete generator for your next project, based on the book \"Refactoring UI\" by Steve Schoger.",
+  "description": "Color palette generator for your next project, based on the book \"Refactoring UI\" by Steve Schoger.",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
