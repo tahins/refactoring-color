@@ -22,7 +22,12 @@ const getShades = getShade => colorLightness.map(lightness => {
 const getColorShade = color => lightness => `hsl(${color.h}, ${color.s}%, ${lightness}%)`;
 const getGreyShade = (primaryColor, grey) => lightness => `hsl(${primaryColor.h}, ${grey.s}%, ${lightness}%)`;
 
-const onShadeClick = (state, colorCode) => showToast(state, colorCode);
+const onShadeClick = (state, colorCode) => {
+    copyText(colorCode);
+    return showToast(state, colorCode)
+};
+
+const copyText = text => navigator.clipboard.writeText(text);
 
 const showToast = (state, colorCode) => [{
     ...state,
