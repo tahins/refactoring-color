@@ -47,8 +47,8 @@ const AccentColor = ({ accentColor, primaryColor }) => $(ColumnLayout, {
                     $('span', { class: 'menu-label' }, 'Inbox'),
                     $('span', {
                         class: 'badge-accent-color', style: {
-                            color: `hsl(${accentColor.h}, ${accentColor.s}%, 25%)`,
-                            backgroundColor: `hsl(${accentColor.h}, ${accentColor.s}%, 70%)`
+                            color: `hsl(${accentColor.h}, ${accentColor.s}%, 20%)`,
+                            backgroundColor: `hsl(${accentColor.h}, ${accentColor.s}%, 80%)`
                         }
                     }, 'New')
                 ])
