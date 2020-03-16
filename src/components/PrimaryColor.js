@@ -5,12 +5,7 @@ import ColorPicker from '../components/ColorPicker';
 import './Component.css';
 import './ColorPicker.css';
 
-const changeColor = (state, event) => ({
-    ...state,
-    primaryColor: { h: event.target.value, s: 100, l: 40 }
-});
-
-const PrimaryColor = ({ primaryColor }) => $(ColumnLayout, {
+const PrimaryColor = ({ primaryColor, primaryColorUndoStack, primaryColorRedoStack }) => $(ColumnLayout, {
     center: true,
     reverse: true,
     children: [
@@ -19,7 +14,9 @@ const PrimaryColor = ({ primaryColor }) => $(ColumnLayout, {
             $('div', { class: 'color-input-container' }, [
                 $(ColorPicker, {
                     initialHue: primaryColor.h,
-                    onChangeColor: changeColor
+                    colorKey: 'primaryColor',
+                    undoColorStack: primaryColorUndoStack,
+                    redoColorStack: primaryColorRedoStack
                 })
             ])
         ]),

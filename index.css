@@ -40,3 +40,23 @@ html, body {
     box-shadow: 0 5px 15px 0 hsla(0, 0%, 0%, 0.15);
 }
 
+.btn-container {
+    margin: 20px 0;
+    min-height: 47px;
+    text-align: right;
+}
+
+.btn {
+    border: 0;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: dodgerblue;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    background-color: #8e8e8e;
+}

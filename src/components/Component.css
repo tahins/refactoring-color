@@ -11,6 +11,7 @@
     border-radius: 7px;
 }
 
+.btn:focus,
 .color-input:focus,
 .preview-button:focus,
 .button-primary-color:focus {

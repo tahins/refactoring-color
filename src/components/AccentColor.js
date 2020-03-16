@@ -5,13 +5,7 @@ import ColorPicker from '../components/ColorPicker';
 import './Component.css';
 import './ColorPicker.css';
 
-const changeColor = (state, event) => ({
-    ...state,
-    accentHue: event.target.value,
-    accentColor: { h: event.target.value, s: 100, l: 40 }
-});
-
-const AccentColor = ({ accentColor, primaryColor }) => $(ColumnLayout, {
+const AccentColor = ({ accentColor, primaryColor, accentColorUndoStack, accentColorRedoStack }) => $(ColumnLayout, {
     center: true,
     reverse: true,
     children: [
@@ -20,7 +14,9 @@ const AccentColor = ({ accentColor, primaryColor }) => $(ColumnLayout, {
             $('div', { class: 'color-input-container' }, [
                 $(ColorPicker, {
                     initialHue: accentColor.h,
-                    onChangeColor: changeColor
+                    colorKey: 'accentColor',
+                    undoColorStack: accentColorUndoStack,
+                    redoColorStack: accentColorRedoStack
                 })
             ])
         ]),

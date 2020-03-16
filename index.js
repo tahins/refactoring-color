@@ -1,5 +1,6 @@
 import { h as $, app } from "hyperapp";
 import { SCREENS } from "./src/constants/AppConstant";
+import Stack from './src/utils/Stack';
 
 import './index.css';
 import './toast.css';
@@ -15,13 +16,26 @@ const init = {
     toast: { show: false, message: '' }
 };
 
+const primaryColorUndoStack = new Stack();
+const accentColorUndoStack = new Stack();
+const primaryColorRedoStack = new Stack();
+const accentColorRedoStack = new Stack();
+const initializeStack = () => {
+    primaryColorUndoStack.push(init.primaryColor.h);
+    accentColorUndoStack.push(init.accentColor.h);
+}
+
 const gotoNextStep = state => ({ ...state, currentScreen: Math.min(++state.currentScreen, SCREENS.length - 1) });
 const gotoPreviousStep = state => ({ ...state, currentScreen: Math.max(--state.currentScreen, 0) });
 
 app({
-    init,
+    init: [init, initializeStack()],
     view: state => $('div', {}, [
-        $(SCREENS[state.currentScreen], state),
+        $(SCREENS[state.currentScreen], {
+            ...state,
+            primaryColorUndoStack, accentColorUndoStack,
+            primaryColorRedoStack, accentColorRedoStack
+        }),
         $('div', { class: 'navigation' }, [
             state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, '<'),
             state.currentScreen < SCREENS.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, '>')
