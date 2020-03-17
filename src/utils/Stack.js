@@ -1,17 +1,17 @@
 class Stack {
     constructor() {
-        this._array = [];
+        this.__array = [];
     }
 
-    push(item) { return this._array.push(item); }
+    push(item) { return this.__array.push(item); }
 
-    pop() { return this._array.splice(this._array.length - 1, 1)[0]; }
+    pop() { return this.__array.splice(this.__array.length - 1, 1)[0]; }
 
-    peek() { return this._array[this._array.length - 1]; }
+    peek() { return this.__array[this.__array.length - 1]; }
 
-    count() { return this._array.length; }
+    count() { return this.__array.length; }
 
-    empty() { return this._array = []; }
+    empty() { return this.__array = []; }
 }
 
 export default Stack;

@@ -7,8 +7,8 @@ import './toast.css';
 
 const init = {
     currentScreen: 0,
-    primaryColor: { h: 207, s: 90, l: 40 },
-    accentColor: { h: 155, s: 90, l: 40 },
+    primaryColor: { h: 207, s: 70, l: 50 },
+    accentColor: { h: 155, s: 70, l: 50 },
     grey: { h: 207, s: 10, l: 40 },
     red: { h: 0, s: 70, l: 40 },
     green: { h: 145, s: 55, l: 40 },

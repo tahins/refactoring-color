@@ -5,7 +5,6 @@ let pickerRedoStack;
 let pickerColorKey;
 const pushInStack = colorHue => {
     if (pickerUndoStack.peek() !== colorHue) pickerUndoStack.push(colorHue);
-    console.log(colorHue, pickerUndoStack._array);
 };
 
 const undo = state => {
