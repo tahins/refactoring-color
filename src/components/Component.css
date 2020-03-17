@@ -19,9 +19,9 @@
 }
 
 .color-preview {
-    display: flex;
     flex: 1;
-    padding: 20px;
+    display: flex;
+    padding: 40px 20px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
