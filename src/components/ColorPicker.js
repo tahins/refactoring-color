@@ -42,8 +42,14 @@ const ColorPicker = ({ initialHue, colorKey, undoColorStack, redoColorStack }) =
             onchange: changeColorEndHandler
         }),
         $('div', { class: 'btn-container' }, [
-            $('button', { class: 'btn', disabled: pickerUndoStack.count() <= 1, onclick: undo }, '↶ Undo'),
-            $('button', { class: 'btn', disabled: pickerRedoStack.count() <= 0, onclick: redo }, 'Redo ↷')
+            $('button', { class: 'btn', disabled: pickerUndoStack.count() <= 1, onclick: undo }, [
+                $('i', { class: 'fas fa-undo-alt' }),
+                $('span', {}, 'Undo')
+            ]),
+            $('button', { class: 'btn', disabled: pickerRedoStack.count() <= 0, onclick: redo }, [
+                $('span', {}, 'Redo'),
+                $('i', { class: 'fas fa-redo-alt' })
+            ])
         ])
     ]);
 }

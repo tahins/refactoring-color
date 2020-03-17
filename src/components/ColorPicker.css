@@ -5,3 +5,11 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.fa-undo-alt {
+    margin-right: 5px;
+}
+
+.fa-redo-alt {
+    margin-left: 5px;
+}
