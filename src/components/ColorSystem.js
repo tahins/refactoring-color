@@ -14,7 +14,6 @@ const getColorShades = color => {
 };
 const getGreyShades = (color, grey) => {
     greyColorShades = colorService.getGreyShades(color, grey);
-    console.log(greyColorShades)
     return greyColorShades.map((colorCode, index) => getShade(colorCode, index));
 };
 const getShade = (colorCode, index) => $('div', {}, [
