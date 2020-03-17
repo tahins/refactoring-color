@@ -19,6 +19,36 @@ html, body {
     padding: 20px;
 }
 
+.topbar {
+    top: 5px;
+    right: 5px;
+    position: fixed;
+    font-size: 24px;
+}
+
+.topbar a {
+    padding: 5px;
+    color: gray;
+    text-decoration: none;
+}
+
+.dark,
+.dark .color-preview {
+    color: whitesmoke;
+    background-color: black !important;
+}
+
+.dark .card,
+.dark .menu-label,
+.dark .card-accent-border {
+    color: whitesmoke;
+    background-color: #333333 !important;
+}
+
+.dark .fa-sun {
+    color: orange;
+}
+
 .navigation {
     right: 20px;
     bottom: 20px;

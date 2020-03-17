@@ -6,6 +6,7 @@ import './index.css';
 import './toast.css';
 
 const init = {
+    darkMode: false,
     currentScreen: 0,
     primaryColor: { h: 207, s: 70, l: 50 },
     accentColor: { h: 155, s: 70, l: 50 },
@@ -25,20 +26,36 @@ const initializeStack = () => {
     accentColorUndoStack.push(init.accentColor.h);
 }
 
+const toggleDarkMode = (state) => ({ ...state, darkMode: !state.darkMode });
 const gotoNextStep = state => ({ ...state, currentScreen: Math.min(++state.currentScreen, SCREENS.length - 1) });
 const gotoPreviousStep = state => ({ ...state, currentScreen: Math.max(--state.currentScreen, 0) });
 
 app({
     init: [init, initializeStack()],
-    view: state => $('div', {}, [
+    view: state => $('div', { class: { dark: state.darkMode } }, [
         $(SCREENS[state.currentScreen], {
             ...state,
             primaryColorUndoStack, accentColorUndoStack,
             primaryColorRedoStack, accentColorRedoStack
         }),
+        $('div', { class: 'topbar' }, [
+            $('a', { href: '#', title: "Toggle darkness!!!", onclick: toggleDarkMode }, [
+                $('i', { class: { fas: true, 'fa-moon': !state.darkMode, 'fa-sun': state.darkMode } })
+            ]),
+            $('a', { href: 'https://github.com/tahins/refactoring-color', target: '_blank' }, [
+                $('i', { class: 'fab fa-github' })
+            ]),
+            $('a', { href: 'https://twitter.com/tahins', target: '_blank' }, [
+                $('i', { class: 'fab fa-twitter' })
+            ])
+        ]),
         $('div', { class: 'navigation' }, [
-            state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, '<'),
-            state.currentScreen < SCREENS.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, '>')
+            state.currentScreen > 0 && $('a', { href: '#', onclick: gotoPreviousStep }, [
+                $('i', { class: 'fas fa-angle-left' })
+            ]),
+            state.currentScreen < SCREENS.length - 1 && $('a', { href: '#', onclick: gotoNextStep }, [
+                $('i', { class: 'fas fa-angle-right' })
+            ])
         ]),
         $('div', {
             class: {
