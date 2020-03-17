@@ -14,7 +14,7 @@ const undo = state => {
 
 const redo = state => {
     pickerUndoStack.push(pickerRedoStack.pop());
-    return { ...state, [pickerColorKey]: { h: pickerRedoStack.peek(), s: 100, l: 40 } }
+    return { ...state, [pickerColorKey]: { h: pickerUndoStack.peek(), s: 100, l: 40 } }
 };
 
 const changeColorEndHandler = (state, event) => [
