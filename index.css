@@ -12,11 +12,12 @@ html, body {
 .container {
     flex: 1;
     display: flex;
+    padding: 20px 0;
     flex-direction: column;
 }
 
 .section {
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .topbar {
