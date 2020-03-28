@@ -6,7 +6,7 @@ import './index.css';
 import './toast.css';
 
 const init = {
-    darkMode: false,
+    darkMode: true,
     currentScreen: 0,
     primaryColor: { h: 207, s: 70, l: 50 },
     accentColor: { h: 155, s: 70, l: 50 },
