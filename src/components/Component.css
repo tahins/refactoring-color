@@ -25,7 +25,8 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: whitesmoke;
+    border-left: 2px solid lightgray;
+    /* background-color: whitesmoke; */
 }
 
 .button-primary-color {
@@ -35,7 +36,7 @@
     font-weight: bold;
     padding: 12px 15px;
     border-radius: 7px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -95,4 +96,62 @@
     border-radius: 7px;
     vertical-align: middle;
     text-transform: uppercase;
+}
+
+.alert-primary-color {
+    margin: 20px;
+    width: 400px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+
+.alert-primary-color .alert-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.alert-primary-color .alert-body {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.form {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+.form h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.form h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 18px 0 6px 0;
+}
+
+.form p {
+    font-size: 12px;
+    margin: 6px 0 18px 0;
+}
+
+.form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.form-buttons {
+    margin-top: 20px;
 }
